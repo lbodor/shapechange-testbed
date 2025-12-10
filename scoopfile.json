@@ -1,0 +1,16 @@
+{
+    "buckets": [
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java"
+        }
+    ],
+    "apps": [
+        {
+            "Source": ".\\scoop\\ea-lite.json"
+        },
+        {
+            "Source": ".\\scoop\\shapechange.json"
+        }
+    ]
+}

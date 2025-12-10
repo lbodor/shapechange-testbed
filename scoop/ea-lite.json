@@ -1,0 +1,30 @@
+{
+    "homepage": "https://sparxsystems.com",
+    "description": "Enterprise Architect",
+    "license": "https://sparxsystems.com/legal.html",
+    "version": "17.1",
+    "depends": [
+        "curl"
+    ],
+    "architecture": {
+        "64bit": {
+            "##": "Scoop downloads don't support custom headers, so perform the real download in pre_install",
+            "url": "https://www.example.com",
+            "hash": "6f5635035f36ad500b4fc4bb7816bb72ef5594e1bcae44fa074c5e988fc4c0fe",
+            "pre_install": [
+                "curl.exe -sOJ 'https://sparxsystems.com/bin/ealite_x64.msi' `",
+                "  -H 'User-Agent: x' `",
+                "  -H 'Sec-Fetch-Site: x' `",
+                "  --output-dir \"$dir\""
+            ],
+            "installer": {
+                "script": "Expand-MsiArchive \"$dir\\ealite_x64.msi\" \"$dir\""
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\www.example.com\"",
+                "Remove-Item \"$dir\\ealite_x64.msi\""
+            ],
+            "bin":  [ [ "Sparx Systems\\EA LITE\\EA.exe", "ea-lite" ] ]
+        }
+    }
+}
