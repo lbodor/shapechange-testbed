@@ -1,0 +1,19 @@
+{
+    "homepage": "https://sparxsystems.com",
+    "description": "Enterprise Architect",
+    "license": "https://sparxsystems.com/legal.html",
+    "version": "17.1",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.example.com",
+            "hash": "6f5635035f36ad500b4fc4bb7816bb72ef5594e1bcae44fa074c5e988fc4c0fe",
+            "installer": {
+                "script": "Expand-MsiArchive \"$(pwd)\\scoop\\ealite_x64.msi\" \"$dir\""
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\www.example.com\""
+            ],
+            "bin":  [ [ "Sparx Systems\\EA LITE\\EA.exe", "ea-lite" ] ]
+        }
+    }
+}
